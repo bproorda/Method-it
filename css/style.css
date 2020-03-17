@@ -30,7 +30,7 @@ body > header {
 }
 
 
-body > header, main, footer {
+body > header, footer {
   margin: auto;
   width: 100%;
 } 
@@ -45,6 +45,24 @@ body > header > nav > ul {
   position: relative;
   top: 20px;
 } 
+
+/* --- Main --- */
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+h3 {
+  display: inline;
+  font-size: 20px;
+}
+
+p {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
 
 
 /* --- Study Page --- */
