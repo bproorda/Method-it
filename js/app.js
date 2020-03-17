@@ -74,7 +74,7 @@ function checkAnswer() {
   var idEnd = id.charAt(id.length-1);
   // console.log('get value from question ' + idEnd);
   var whichQuestionNow = 'question' + idEnd;
-  var userAnswerNode = document.getElementById(whichQuestionNow)
+  var userAnswerNode = document.getElementById(whichQuestionNow);
   var userAnswer = userAnswerNode.value;
   var storedObjectString = localStorage.getItem(whichQuestionNow);
   var storedObject = JSON.parse(storedObjectString);

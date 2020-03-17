@@ -1,3 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+body > header {
+  position: relative;
+  top: 15px;
+}
+
+
+body > header, main, footer {
+  margin: auto;
+  width: 900px;
+}
+
+body > header > .logo {
+  float: left;
+}
+
+body > header > nav,
+body > header > nav > ul {
+  float: right;
+  position: relative;
+  top: 20px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 25px;
+}
+
+a {
+  text-decoration: none;
+}
 .dot {
     height: 25px;
     width: 25px;
