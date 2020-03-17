@@ -7,6 +7,7 @@ var methodNames = ['push', 'pop', 'shift', 'unshift'];
 var methodQuestions = ['adds item to end of array', 'takes item off end of array', 'adds item to beginning of array', 'takes item off beginning of array'];
 var methodAnswer = ['a', 'b', 'c', 'd'];
 var nodeNumber = 4;
+var displayedMethods = [];
 
 function Methods(name, question, answer) {
   this.name = name;
@@ -21,31 +22,39 @@ for (var i = 0; i < methodNames.length; i++) {
 }
 
 //initial render to nodes
-for (var j = 1; j <= nodeNumber; j++) {
-  var nodeId = ('div' + j);
-  var whichQuestion = 'question' + j;
-  var arrayIndex = j - 1;
-  var nodeLocation = document.getElementById(nodeId);
-  var kids = nodeLocation.childNodes;
-  kids[1].textContent = allMethods[arrayIndex].name;
-  kids[3].textContent = allMethods[arrayIndex].question;
+function renderNodes(){
+  for (var j = 1; j <= nodeNumber; j++) {
+    var nodeId = ('div' + j);
+    var whichQuestion = 'question' + j;
+    var arrayIndex = j - 1;
+    var nodeLocation = document.getElementById(nodeId);
+    var kids = nodeLocation.childNodes;
+    kids[1].textContent = displayedMethods[arrayIndex].name;
+    kids[3].textContent = displayedMethods[arrayIndex].question;
 
-  //adding event listener to dots to revel nodes
-  var revealNode = document.getElementById('dot' + j);
-  revealNode.addEventListener('click', showMe, false);
+    //adding event listener to dots to revel nodes
+    var revealNode = document.getElementById('dot' + j);
+    revealNode.addEventListener('click', showMe, false);
 
-  //adding event listener to close buttons
-  var closeBtn = document.getElementById('close' + j);
-  closeBtn.addEventListener('click', closeDiv);
+    //adding event listener to close buttons
+    var closeBtn = document.getElementById('close' + j);
+    closeBtn.addEventListener('click', closeDiv);
 
-  //adding event listener to buttons for answers
-  var nodeButton = document.getElementById('button' + j);
-  // console.log(nodeButton);
-  nodeButton.addEventListener('click', checkAnswer, false);
+    //adding event listener to buttons for answers
+    var nodeButton = document.getElementById('button' + j);
+    // console.log(nodeButton);
+    nodeButton.addEventListener('click', checkAnswer, false);
 
-  //saving which object is tied to which node in localstorage
-  localStorage.setItem(whichQuestion, JSON.stringify(allMethods[arrayIndex]));
+    //saving which object is tied to which node in localstorage
+    localStorage.setItem(whichQuestion, JSON.stringify(allMethods[arrayIndex]));
+  }
 }
+
+for (var p = 0; p < nodeNumber; p++){
+  displayedMethods.push('');
+}
+randomizer();
+
 
 //hides node when close button is clicked
 function closeDiv() {
@@ -97,4 +106,24 @@ function getIdnumber(eventTarget) {
   var id = eventTarget.target.id;
   var idEnd =id.charAt(id.length-1);
   return idEnd;
+}
+
+// event listener for reset image
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', randomizer);
+
+function randomizer(){
+  console.log('this was clicked');
+  for (var k = 0; k < displayedMethods.length; k++) {
+    var nextMethod = Math.floor(Math.random() * allMethods.length);
+    for (var m = 0; m < allMethods.length; m++) {
+      if (!displayedMethods.every(function(number) {
+        return number !== nextMethod;
+      })) {
+        nextMethod = Math.floor(Math.random() * allMethods.length);
+      }
+    }
+    displayedMethods[k] = allMethods[nextMethod];
+  }
+  renderNodes();
 }
