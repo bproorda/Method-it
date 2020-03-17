@@ -45,14 +45,11 @@ for (var j = 1; j <= nodeNumber; j++) {
 
   //saving which object is tied to which node in localstorage
   localStorage.setItem(whichQuestion, JSON.stringify(allMethods[arrayIndex]));
-  // var xyt = localStorage.getItem(whichQuestion);
-  // console.log(xyt);
 }
 
 //hides node when close button is clicked
 function closeDiv() {
-  var id = event.target.id;
-  var idEnd = id.charAt(id.length-1);
+  var idEnd = getIdnumber(event);
   var thisDiv = document.getElementById('div' + idEnd);
   thisDiv.style.visibility = 'hidden';
 }
@@ -60,8 +57,7 @@ function closeDiv() {
 
 //reveals node when clicked
 function showMe() {
-  var id = event.target.id;
-  var idEnd = id.charAt(id.length-1);
+  var idEnd = getIdnumber(event);
   // console.log('show me div ' + idEnd);
   var node = document.getElementById('div'+ idEnd);
   node.style.visibility = 'visible';
@@ -70,9 +66,7 @@ function showMe() {
 //checks the users answer against correct answer stored in local storage
 function checkAnswer() {
   event.preventDefault();
-  var id = event.target.id;
-  var idEnd = id.charAt(id.length-1);
-  // console.log('get value from question ' + idEnd);
+  var idEnd = getIdnumber(event);
   var whichQuestionNow = 'question' + idEnd;
   var userAnswerNode = document.getElementById(whichQuestionNow)
   var userAnswer = userAnswerNode.value;
@@ -98,7 +92,9 @@ function checkAnswer() {
     thisDot.style.backgroundColor = 'red';
   }
   thisDiv.style.visibility = 'hidden';
-
-
-
+}
+function getIdnumber(eventTarget) {
+  var id = eventTarget.target.id;
+  var idEnd =id.charAt(id.length-1);
+  return idEnd;
 }
