@@ -81,12 +81,15 @@ function checkAnswer() {
   console.log(storedObject.answer);
   var thisDot = document.getElementById('dot' + idEnd);
   var thisDiv = document.getElementById('div' + idEnd);
+  var thisSubmit = document.getElementById('button' + idEnd);
+  var submitParent = thisSubmit.parentNode;
 
   if (userAnswer === storedObject.answer) {
     console.log('correct!');
     thisDot.style.backgroundColor = 'blue';
     var parent = userAnswerNode.parentNode;
     parent.removeChild(userAnswerNode);
+    submitParent.removeChild(thisSubmit);
     var newText = document.createElement('p');
     newText.textContent = 'You correctly answered:  ' + userAnswer;
     parent.appendChild(newText);
