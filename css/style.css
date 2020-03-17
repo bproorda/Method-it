@@ -2,9 +2,27 @@
   box-sizing: border-box;
 }
 
+/* --- Header --- */
+
+header {
+  height: 150px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 25px;
+} 
+
+a {
+  text-decoration: none;
+} 
+
+/* --- Body --- */
+
 body {
   background-color: whitesmoke;
-}
+} 
 
 body > header {
   position: relative;
@@ -12,31 +30,43 @@ body > header {
 }
 
 
-body > header, main, footer {
+body > header, footer {
   margin: auto;
-  width: 900px;
-}
-
+  width: 100%;
+} 
+ 
 body > header > .logo {
   float: left;
-}
+} 
 
 body > header > nav,
 body > header > nav > ul {
   float: right;
   position: relative;
   top: 20px;
+} 
+
+/* --- Main --- */
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 
-nav li {
-  display: inline-block;
-  margin: 0;
-  padding: 25px;
+h3 {
+  display: inline;
+  font-size: 20px;
 }
 
-a {
-  text-decoration: none;
+p {
+  font-size: 15px;
+  padding-bottom: 5px;
 }
+
+
+/* --- Study Page --- */
+
 .dot {
     height: 25px;
     width: 25px;
@@ -44,7 +74,23 @@ a {
     border-radius: 50%;
     display: inline-block;
   }
+
 div {
     visibility: hidden;
    
+}
+
+/* --- About us --- */
+
+ .person1, .person2, .person3 {
+  display: inline-block; 
+  margin: 35px 35px;
+  vertical-align: top;
+} 
+
+.profile {
+  color: black;
+  float: left;
+  width: 25%;
+  text-align: center;
 }
