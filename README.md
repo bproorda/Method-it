@@ -9,3 +9,6 @@ Project: method(It) is web app study tool designed to help a user learn and unde
 - [Glossary](planningimages/glossary-wireframe.jpg)
 - [Home](planningimages/landing-wireframe.jpg)
 - [Study](planningimages/study-wireframe.jpg)
+
+## Project Board
+[Trello Board](https://trello.com/b/t27gHJsx/methodit)
