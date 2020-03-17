@@ -31,8 +31,12 @@ for (var j = 1; j <= nodeNumber; j++) {
   kids[3].textContent = allMethods[arrayIndex].question;
 
   //adding event listener to dots to revel nodes
-  var revealNode = document.getElementById('dot' +j);
+  var revealNode = document.getElementById('dot' + j);
   revealNode.addEventListener('click', showMe, false);
+
+  //adding event listener to close buttons
+  var closeBtn = document.getElementById('close' + j);
+  closeBtn.addEventListener('click', closeDiv);
 
   //adding event listener to buttons for answers
   var nodeButton = document.getElementById('button' + j);
@@ -43,6 +47,14 @@ for (var j = 1; j <= nodeNumber; j++) {
   localStorage.setItem(whichQuestion, JSON.stringify(allMethods[arrayIndex]));
   // var xyt = localStorage.getItem(whichQuestion);
   // console.log(xyt);
+}
+
+//hides node when close button is clicked
+function closeDiv() {
+  var id = event.target.id;
+  var idEnd = id.charAt(id.length-1);
+  var thisDiv = document.getElementById('div' + idEnd);
+  thisDiv.style.visibility = 'hidden';
 }
 
 
@@ -62,16 +74,27 @@ function checkAnswer() {
   var idEnd = id.charAt(id.length-1);
   // console.log('get value from question ' + idEnd);
   var whichQuestionNow = 'question' + idEnd;
-  var userAnswer = document.getElementById(whichQuestionNow).value;
+  var userAnswerNode = document.getElementById(whichQuestionNow)
+  var userAnswer = userAnswerNode.value;
   var storedObjectString = localStorage.getItem(whichQuestionNow);
   var storedObject = JSON.parse(storedObjectString);
   console.log(storedObject.answer);
+  var thisDot = document.getElementById('dot' + idEnd);
+  var thisDiv = document.getElementById('div' + idEnd);
 
   if (userAnswer === storedObject.answer) {
     console.log('correct!');
+    thisDot.style.backgroundColor = 'blue';
+    var parent = userAnswerNode.parentNode;
+    parent.removeChild(userAnswerNode);
+    var newText = document.createElement('p');
+    newText.textContent = 'You correctly answered:  ' + userAnswer;
+    parent.appendChild(newText);
   } else {
     console.log('incorect');
+    thisDot.style.backgroundColor = 'red';
   }
+  thisDiv.style.visibility = 'hidden';
 
 
 
