@@ -12,6 +12,7 @@ Method(It) is a web app study tool designed to help a beginner programmer learn 
 
 ## MVP
 At a minimum, we need to be able to render a study page that displays nodes that the user can click on to view a flashcard and then the user needs to be able to input a response to the practice problem. Additionally, that response needs to be validated for accuracy and then inform the user of the result. 
+- [User Stories](userstories-acceptancecriteria.jpg)
 
 ## Stretch Goals
 - Add timer
