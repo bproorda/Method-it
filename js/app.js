@@ -20,10 +20,20 @@ for (var i = 0; i < methodNames.length; i++) {
   new Methods(methodNames[i], methodQuestions[i], methodAnswer[i]);
 }
 // console.log(allMethods);
-
+//change id to div1
 for (var j = 1; j <= nodeNumber; j++) {
-  var nodeLocation = document.getElementById(j);
+  var nodeLocation = document.getElementById('div' + j);
   var kids = nodeLocation.childNodes;
   kids[1].textContent = allMethods[j-1].name;
   kids[3].textContent = allMethods[j-1].question;
+  var revealNode = document.getElementById('dot' +j);
+  revealNode.addEventListener('click', showMe, false);
+}
+
+function showMe() {
+  var id = event.target.id;
+  var idEnd = id.charAt(id.length-1);
+  console.log('show me div ' + idEnd);
+  var node = document.getElementById('div'+ idEnd);
+  node.style.visibility = 'visible';
 }
