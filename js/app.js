@@ -68,7 +68,7 @@ function checkAnswer() {
   event.preventDefault();
   var idEnd = getIdnumber(event);
   var whichQuestionNow = 'question' + idEnd;
-  var userAnswerNode = document.getElementById(whichQuestionNow)
+  var userAnswerNode = document.getElementById(whichQuestionNow);
   var userAnswer = userAnswerNode.value;
   var storedObjectString = localStorage.getItem(whichQuestionNow);
   var storedObject = JSON.parse(storedObjectString);
