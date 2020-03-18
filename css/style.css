@@ -128,3 +128,10 @@ div {
   width: 25%;
   text-align: center;
 }
+
+/* --- Footer --- */
+
+footer {
+  height: 50px;
+  background-color: lightpink;
+}
