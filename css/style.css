@@ -86,6 +86,7 @@ main {
   width: 90%;
   margin: 0 auto;
   padding-bottom: 50px;
+  padding-top: 25px;
 }
 
 h3 {
@@ -96,6 +97,10 @@ h3 {
 p {
   font-size: 15px;
   padding-bottom: 5px;
+}
+
+h2 {
+  font-size: 30px;
 }
 
 
@@ -132,6 +137,62 @@ div {
 /* --- Footer --- */
 
 footer {
-  height: 50px;
-  background-color: lightpink;
+  height: 100px;
+  background-color: #7b0f0f;
+  color: #E19797;
+  border: 5px solid black;
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  text-align: center;
 }
+
+
+/* --- Things francesco is messing with --- */
+
+/* -- concept 2 -- */
+
+/* footer {
+  height: 100px;
+  background-color: #1139CB;
+  color: #91A1DD;
+  border: 5px solid black;
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  text-align: center;
+} */
+
+/* -- concept 3 -- */
+
+/* footer {
+  height: 100px;
+  background-color: #B104D6;
+  color: #D28AE1;
+  border: 5px solid black;
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  text-align: center;
+} */
+
+/* -- concept 4 -- */
+
+/* footer {
+  height: 100px;
+  background-color: #D28AE1;
+  color: #4D015D;
+  border: 5px solid black;
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  text-align: center;
+} */
+
+/* -- concept 5 -- */
+
+/* footer {
+  height: 100px;
+  background-color: #AE4141;
+  color: #210000;
+  border: 5px solid black;
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  text-align: center;
+} */
