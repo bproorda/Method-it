@@ -4,7 +4,7 @@ console.log('this page is running!');
 
 var allMethods = [];
 var methodNames = ['.concat()', '.copyWithin()', '.entries()', '.every()', '.fill()', '.filter()', '.find()', '.findIndex()', '.forEach()', '.from()', '.includes()', '.indexOf()', '.isArray()', '.join()', '.keys()', '.lastIndexOf()', '.valueOf()', '.map()', '.pop()', '..push()', '.reduce()', '.reduceRight()', '.reverse()', '.shift()', '.slice()', '.some()', '.sort()', '.splice()', '.toString()', '.unshift()'];
-var methodQuestions = ['Var array1 - [1, 2, 3] \n Var array2 - [4, 5, 6]  \n What is the expected output of array1.concat(array2);  ?', 'takes item off end of array', 'adds item to beginning of array', 'takes item off beginning of array'];
+var methodQuestions = ['[1, 2, 3, 4, 5, 6]', ' ["d", "d", "e", "d", "e"]', '[0, "a"]', 'true', '[6, 6, 6, 6]', '["exuberant", "destruction", "present"]', '12', '3', '[2,3,4,5]', '["b","r","e","n","n"]', 'true', '1', 'false','"stacey"','[0,1,2]', '4', 'false', '[3,9,27]', '[98,47,36, 62]', '[81,56,34,21]', '5', '-11', '1', '["stacey","francesco"]', '[1,9,13]', 'true', '"brenn"', '[6,7,8,9]', '"1b5"', '0'];
 var methodAnswer = ['[1, 2, 3, 4, 5, 6]', ' ["d", "d", "e", "d", "e"]', '[0, "a"]', 'true', '[6, 6, 6, 6]', '["exuberant", "destruction", "present"]', '12', '3', '[2,3,4,5]', '["b","r","e","n","n"]', 'true', '1', 'false','"stacey"','[0,1,2]', '4', 'false', '[3,9,27]', '[98,47,36, 62]', '[81,56,34,21]', '5', '-11', '1', '["stacey","francesco"]', '[1,9,13]', 'true', '"brenn"', '[6,7,8,9]', '"1b5"', '0'];
 var nodeNumber = 4;
 var displayedMethods = [];
@@ -46,7 +46,7 @@ function renderNodes(){
     nodeButton.addEventListener('click', checkAnswer, false);
 
     //saving which object is tied to which node in localstorage
-    localStorage.setItem(whichQuestion, JSON.stringify(allMethods[arrayIndex]));
+    localStorage.setItem(whichQuestion, JSON.stringify(displayedMethods[arrayIndex]));
   }
 }
 
