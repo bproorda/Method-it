@@ -85,19 +85,21 @@ function checkAnswer() {
   var thisDot = document.getElementById('dot' + idEnd);
   var thisDiv = document.getElementById('div' + idEnd);
   var thisSubmit = document.getElementById('button' + idEnd);
-  var submitParent = thisSubmit.parentNode;
+
 
   if (userAnswer === storedObject.answer) {
     console.log('correct!');
     thisDot.style.backgroundColor = 'blue';
+    thisSubmit.style.display = 'none';
+    userAnswerNode.style.display = 'none';
     var parent = userAnswerNode.parentNode;
-    parent.removeChild(userAnswerNode);
-    submitParent.removeChild(thisSubmit);
-    var newText = document.createElement('p');
+    var newText = document.createElement('article');
+    newText.setAttribute('id', 'article' + idEnd);
+    console.log(newText.getAttribute('id'));
     newText.textContent = 'You correctly answered:  ' + userAnswer;
     parent.appendChild(newText);
   } else {
-    console.log('incorect');
+    console.log('incorrect');
     thisDot.style.backgroundColor = 'red';
   }
   thisDiv.style.visibility = 'hidden';
@@ -107,7 +109,14 @@ function getIdnumber(eventTarget) {
   var idEnd =id.charAt(id.length-1);
   return idEnd;
 }
-
+// function test1() {
+//   var testNode = document.getElementById('div1');
+//   var children = testNode.childNodes;
+//   for (var p = 0; p < children.length; p++) {
+//     console.log(children[p]);
+//   }
+// }
+// test1();
 // event listener for reset image
 var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', randomizer);
@@ -123,6 +132,17 @@ function randomizer(){
         nextMethod = Math.floor(Math.random() * allMethods.length);
       }
     }
+    //reseting node content and background color
+    var indexNumber = k + 1;
+    var userInput = document.getElementById('question' +indexNumber);
+    var userSubmit = document.getElementById('button' + indexNumber);
+    var newdot = document.getElementById('dot' + indexNumber);
+    var goodbyeArticle = document.getElementById('article' + indexNumber);
+    var parent = goodbyeArticle.parentNode;
+    // parent.removeChild(goodbyeArticle);
+    userInput.style.display = 'inline-block';
+    userSubmit.style.display = 'inline-block';
+    newdot.style.backgroundColor = '#bbb';
     displayedMethods[k] = allMethods[nextMethod];
   }
   renderNodes();
