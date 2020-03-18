@@ -92,16 +92,14 @@ function checkAnswer() {
     thisDot.style.backgroundColor = 'blue';
     thisSubmit.style.display = 'none';
     userAnswerNode.style.display = 'none';
-    var parent = userAnswerNode.parentNode;
-    var newText = document.createElement('article');
-    newText.setAttribute('id', 'article' + idEnd);
-    console.log(newText.getAttribute('id'));
+    // var parent = userAnswerNode.parentNode;
+    var newText = document.getElementById('article' + idEnd);
     newText.textContent = 'You correctly answered:  ' + userAnswer;
-    parent.appendChild(newText);
   } else {
     console.log('incorrect');
     thisDot.style.backgroundColor = 'red';
   }
+  userAnswerNode.value = '';
   thisDiv.style.visibility = 'hidden';
 }
 function getIdnumber(eventTarget) {
@@ -109,15 +107,6 @@ function getIdnumber(eventTarget) {
   var idEnd =id.charAt(id.length-1);
   return idEnd;
 }
-// function test1() {
-//   var testNode = document.getElementById('div1');
-//   var children = testNode.childNodes;
-//   for (var p = 0; p < children.length; p++) {
-//     console.log(children[p]);
-//   }
-// }
-// test1();
-// event listener for reset image
 var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', randomizer);
 
@@ -137,9 +126,8 @@ function randomizer(){
     var userInput = document.getElementById('question' +indexNumber);
     var userSubmit = document.getElementById('button' + indexNumber);
     var newdot = document.getElementById('dot' + indexNumber);
-    var goodbyeArticle = document.getElementById('article' + indexNumber);
-    var parent = goodbyeArticle.parentNode;
-    // parent.removeChild(goodbyeArticle);
+    var newText = document.getElementById('article' + indexNumber);
+    newText.textContent = '';
     userInput.style.display = 'inline-block';
     userSubmit.style.display = 'inline-block';
     newdot.style.backgroundColor = '#bbb';
