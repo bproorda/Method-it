@@ -136,7 +136,7 @@ div {
 
 /* --- Footer --- */
 
-footer {
+/* footer {
   height: 100px;
   background-color: #7b0f0f;
   color: #E19797;
@@ -144,7 +144,7 @@ footer {
   font-family: 'Architects Daughter';
   font-size: 30px;
   text-align: center;
-}
+} */
 
 
 /* --- Things francesco is messing with --- */
@@ -175,24 +175,45 @@ footer {
 
 /* -- concept 4 -- */
 
+footer {
+  height: 100px;
+  background-color: rgb(225, 125, 245);
+  color: white;
+  border: 5px solid black;
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  text-align: center;
+}
+
+/* -- concept 5 -- */
+
 /* footer {
   height: 100px;
-  background-color: #D28AE1;
-  color: #4D015D;
+  background-color: rgb(221, 115, 115);
+  /* \\\color: #210000; 
   border: 5px solid black;
   font-family: 'Architects Daughter';
   font-size: 30px;
   text-align: center;
 } */
 
-/* -- concept 5 -- */
 
-/* footer {
-  height: 100px;
-  background-color: #AE4141;
-  color: #210000;
-  border: 5px solid black;
-  font-family: 'Architects Daughter';
-  font-size: 30px;
-  text-align: center;
+/* body{ 
+background: rgb(1,66,81);
+background: linear-gradient(90deg, rgba(1,66,81,1) 0%, rgba(4,157,193,1) 30%, rgba(0,212,255,1) 92%); 
+} */
+
+/* body{ 
+background: rgb(33,0,0);
+background: linear-gradient(90deg, rgba(33,0,0,1) 0%, rgba(123,15,15,1) 25%, rgba(225,151,151,1) 89%); 
+} */
+
+/* body {
+background: rgb(77,1,93);
+background: linear-gradient(90deg, rgba(77,1,93,1) 0%, rgba(177,4,214,1) 25%, rgba(210,138,225,1) 89%);
+} */
+
+/* body {
+background: rgb(76,73,77);
+background: linear-gradient(90deg, rgba(76,73,77,1) 0%, rgba(162,150,164,1) 25%, rgba(210,138,225,1) 89%); 
 } */
