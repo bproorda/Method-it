@@ -4,6 +4,13 @@ var jokesArray = ['Eight bytes walk into a bar. The bartender asks, "Can I get y
 
 
 
+// var footerContent = document.getElementById('footerContent');
+// var jokeRendered = document.createElement('p');
+// jokeRendered.textContent = 'Hey ' + userNameStored + ', ' + jokesArray[Math.floor(Math.random() * jokesArray.length)];
+// footerContent.appendChild(jokeRendered);
+
+
+
 var footerContent = document.getElementById('footerContent');
 var jokeRendered = document.createElement('p');
 jokeRendered.textContent = 'Hey ' + userNameStored + ', ' + jokesArray[Math.floor(Math.random() * jokesArray.length)];
