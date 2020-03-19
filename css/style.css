@@ -7,7 +7,7 @@
 
 header {
   height: 150px;
-  border: 5px solid black;
+  border: 5px solid #3BDCE4;
   background-color: #8df4fa;
 }
 
@@ -42,8 +42,16 @@ body > header > nav > ul {
   position: relative;
   top: 20px;
   font-family: 'Architects Daughter';
-  font-size: 25px;
+  font-size: 35px;
 } 
+
+.fade {
+  opacity:1;
+}
+
+.fade:hover {
+  opacity: 0.5;
+}
 
 /* --- Body --- */
 
@@ -63,16 +71,17 @@ main {
 
 h3 {
   display: inline;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-p {
+main > p {
   font-size: 15px;
   padding-bottom: 5px;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 35px;
+  padding-top: 10px;
 }
 
 .hub {
@@ -204,8 +213,11 @@ form {
   height: 100px;
   background-color: #8df4fa;;
   color: white;
-  border: 5px solid black;
+  border: 5px solid #3BDCE4;
   font-family: 'Architects Daughter';
-  font-size: 30px;
   text-align: center;
 } 
+
+footer span p {
+  font-size: 25px;
+}
