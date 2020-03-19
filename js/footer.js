@@ -10,8 +10,11 @@ var jokesArray = ['Eight bytes walk into a bar. The bartender asks, "Can I get y
 // footerContent.appendChild(jokeRendered);
 
 
-
-var footerContent = document.getElementById('footerContent');
-var jokeRendered = document.createElement('p');
-jokeRendered.textContent = 'Hey ' + userNameStored + ', ' + jokesArray[Math.floor(Math.random() * jokesArray.length)];
-footerContent.appendChild(jokeRendered);
+function newFooterText() {
+  var footerContent = document.getElementById('footerContent');
+  var userNameStored = JSON.parse(localStorage.getItem('userName'));
+  footerContent.textContent = 'Hey ' + userNameStored + ', ' + jokesArray[Math.floor(Math.random() * jokesArray.length)];
+}
+if (userNameStored) {
+  newFooterText();
+}
