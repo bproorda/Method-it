@@ -30,6 +30,7 @@ body > header {
 body > header, footer {
   margin: auto;
   width: 90%;
+  min-width: 725px;
 } 
  
 body > header > .logo {
@@ -82,6 +83,10 @@ h2 {
 
 /* --- Study Page --- */
 
+#hubContainer {
+  position: relative;
+}
+
 .dot {
     height: 28px;
     width: 28px;
@@ -90,7 +95,7 @@ h2 {
     display: inline-block;
   }
 
-div {
+.question-container {
     visibility: hidden;
    
 }
@@ -99,58 +104,58 @@ div {
 
 #reset {
   position: absolute;
-  top: 430px;
-  left: 300px;
+  top: 254px;
+  left: 233px;
   height: 100px;
   width: 100px;
 }
 
 #dot1 {
   position: absolute;
-  top: 280px;
-  left: 80px;
+  top: 102px;
+  left: 15px;
 }
 
 #dot2 {
   position: absolute;
-  top: 288px;
-  left: 248px;
+  top: 109px;
+  left: 180px;
 }
 
 #dot3 {
   position: absolute;
-  top: 235px;
-  left: 430px;
+  top: 60px;
+  left: 360px;
 }
 
 #dot4 {
   position: absolute;
-  top: 365px;
-  left: 525px;
+  top: 190px;
+  left: 455px;
 }
 
 #dot5 {
   position: absolute;
-  top: 570px;
-  left: 537px;
+  top: 395px;
+  left: 470px;
 }
 
 #dot6 {
   position: absolute;
-  top: 700px;
-  left: 432px;
+  top: 522px;
+  left: 365px;
 }
 
 #dot7 {
   position: absolute;
-  top: 630px;
-  left: 234px;
+  top: 454px;
+  left: 166px;
 }
 
 #dot8 {
   position: absolute;
-  top: 479px;
-  left: 90px;
+  top: 304px;
+  left: 20px;
 }
 
 #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8 {
