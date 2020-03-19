@@ -126,13 +126,16 @@ function randomizer(){
   for (var k = 0; k < displayedMethods.length; k++) {
     var nextMethod = Math.floor(Math.random() * allMethods.length);
     for (var m = 0; m < allMethods.length; m++) {
-      if (!displayedMethods.every(function(number) {
-        return number !== nextMethod;
+      var nextObject = allMethods[nextMethod];
+      if (displayedMethods.some(function(object) {
+        return object === nextObject;
       })) {
         nextMethod = Math.floor(Math.random() * allMethods.length);
+        nextObject = allMethods[nextMethod];
       }
     }
-    //reseting node content and background color
+
+    // reseting node content and background color
     var indexNumber = k + 1;
     var userInput = document.getElementById('question' +indexNumber);
     var userSubmit = document.getElementById('button' + indexNumber);
@@ -142,7 +145,7 @@ function randomizer(){
     userInput.style.display = 'inline-block';
     userSubmit.style.display = 'inline-block';
     newdot.style.backgroundColor = '#bbb';
-    displayedMethods[k] = allMethods[nextMethod];
+    displayedMethods[k] = nextObject;
   }
   renderNodes();
 }
