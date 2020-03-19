@@ -103,8 +103,7 @@ function checkAnswer() {
   var currentUserString = localStorage.getItem('userprofile');
   var currentUser = JSON.parse(currentUserString);
   currentUser.timesMethodShown[thisQuestionLocation]++;
-
-
+  
 
   if (userAnswer === storedObject.answer) {
     console.log('correct!');
@@ -121,6 +120,7 @@ function checkAnswer() {
   } else {
     console.log('incorrect');
     thisDot.style.backgroundColor = 'red';
+    localStorage.setItem('userprofile', JSON.stringify(currentUser));
   }
   userAnswerNode.value = '';
   thisDiv.style.visibility = 'hidden';
