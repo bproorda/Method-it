@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Architects Daughter';
+  font-size: 20px;
 }
 
 /* --- Header --- */
@@ -163,8 +164,8 @@ h2 {
 
 #dot8 {
   position: absolute;
-  top: 479px;
-  left: 90px;
+  top: 304px;
+  left: 20px;
 }
 
 #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8 {
@@ -181,10 +182,14 @@ h2 {
   box-shadow: 10px 10px 5px black;
   padding: 30px;
   width: 500px;
-  height: 300px;
+  height: 350px;
   background-image: url(../images/paper3.jpg);
 }
 
+
+#div1 p, #div2 p, #div3 p, #div4 p, #div5 p, #div6 p, #div7 p, #div8 p {
+  font-family: 'Inconsolata';
+}
 
 button {
   margin: 5px 5px 5px 0px;
@@ -200,16 +205,19 @@ form {
 
  .person1, .person2, .person3 {
   display: inline-block; 
-  margin: 35px 35px;
   vertical-align: top;
+  text-align: center;
 } 
 
 .profile {
   color: black;
   float: left;
-  width: 25%;
+  width: 30%;
   text-align: center;
+  margin: 10px 15px 50px 15px;
+  font-size: 20px;
 }
+
 
 
 /* --- Footer --- */
@@ -221,8 +229,10 @@ form {
   border: 5px solid #3BDCE4;
   font-family: 'Architects Daughter';
   text-align: center;
+  clear: both;
+  bottom: 0;
 } 
 
-footer span p {
+footer span {
   font-size: 25px;
 }
