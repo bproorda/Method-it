@@ -1,0 +1,8 @@
+p {
+    background-color:lightblue;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    min-height: 25px;
+    font-size: 25px;
+    padding: 5px;
+}
