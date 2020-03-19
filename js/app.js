@@ -17,13 +17,11 @@ function Methods(name, question, answer) {
   this.question = question;
   this. answer = answer;
   this.timesCorrect = 0;
-  this.userAnswer = '';
-  this.nodeState = 'gray';
-  // allMethods.push(this);
+  allMethods.push(this);
 }
 
 for (var i = 0; i < methodNames.length; i++) {
-  allMethods.push(new Methods(methodNames[i], methodQuestions[i], methodAnswer[i]));
+  new Methods(methodNames[i], methodQuestions[i], methodAnswer[i]);
 }
 
 //initial render to nodes
@@ -55,12 +53,14 @@ function renderNodes(){
   }
 }
 
-
+for (var p = 0; p < nodeNumber; p++){
+  displayedMethods.push('');
+}
 randomizer();
 
 
 //hides node when close button is clicked
-function closeDiv(event) {
+function closeDiv() {
   var idEnd = getIdnumber(event);
   var thisDiv = document.getElementById('div' + idEnd);
   thisDiv.style.visibility = 'hidden';
@@ -68,7 +68,7 @@ function closeDiv(event) {
 
 
 //reveals node when clicked
-function showMe(event) {
+function showMe() {
   var idEnd = getIdnumber(event);
   var node = document.getElementById('div'+ idEnd);
   node.style.visibility = 'visible';
@@ -84,7 +84,7 @@ function showMe(event) {
 }
 
 //checks the users answer against correct answer stored in local storage
-function checkAnswer(event) {
+function checkAnswer() {
   event.preventDefault();
   var idEnd = getIdnumber(event);
   var whichQuestionNow = 'question' + idEnd;
@@ -145,27 +145,7 @@ function randomizer(){
     displayedMethods[k] = allMethods[nextMethod];
   }
   renderNodes();
-  // updateQuestionStates();
 }
 
-// checks if local storage exists for questionStates, if not then it creates and populates with displayed questions and empty answers
-// function updateQuestionStates (){
-//   if (!localStorage.questionStates){
-//     var questionStates = [];
-//     for (var q = 0; q < displayedMethods.length; q++){
-//       questionStates.push(new QuestionState(displayedMethods[q].question, ''));
-//     }
-//     console.log(questionStates);
-//     console.log(JSON.stringify(questionStates));
-//     localStorage.setItem('questionStates', JSON.stringify(questionStates));
-//   }
-// }
-
-
-function QuestionState(question, answer){
-  this.storedQuestion = question;
-  this.wasAnswered = false;
-  this.userAnswer = answer;
-}
 
 
