@@ -90,6 +90,13 @@ h2 {
   margin-top: 50px;
 }
 
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
 
 /* --- Study Page --- */
 
@@ -100,7 +107,6 @@ h2 {
 .dot {
     height: 28px;
     width: 28px;
-    background-color: #bbb; 
     border-radius: 50%;
     display: inline-block;
   }
