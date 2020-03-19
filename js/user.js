@@ -16,5 +16,6 @@ listen.addEventListener('submit', function (event) {
     newObject.timesMethodShown.push(0);
     newObject.timesMethodCorrect.push(0);
   }
-//   console.log(newObject);
+  //   console.log(newObject);
+  localStorage.setItem('userprofile', JSON.stringify(newObject));
 });

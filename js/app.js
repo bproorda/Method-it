@@ -11,17 +11,18 @@ var nodeNumber = 8;
 
 
 var displayedMethods = [];
-{/* <br> */}
+
 function Methods(name, question, answer) {
   this.name = name;
   this.question = question;
-  this. answer = answer;
-  this.timesCorrect = 0;
+  this.answer = answer;
+  this.arrayLocation = 0;
   allMethods.push(this);
 }
 
 for (var i = 0; i < methodNames.length; i++) {
-  new Methods(methodNames[i], methodQuestions[i], methodAnswer[i]);
+  var newMethod = new Methods(methodNames[i], methodQuestions[i], methodAnswer[i]);
+  newMethod.arrayLocation = i;
 }
 
 //initial render to nodes
@@ -93,9 +94,16 @@ function checkAnswer() {
   var storedObjectString = localStorage.getItem(whichQuestionNow);
   var storedObject = JSON.parse(storedObjectString);
   console.log(storedObject.answer);
+  var thisQuestionLocation = storedObject.arrayLocation;
+  console.log(storedObject.arrayLocation);
   var thisDot = document.getElementById('dot' + idEnd);
   var thisDiv = document.getElementById('div' + idEnd);
   var thisSubmit = document.getElementById('button' + idEnd);
+  //updating info in user profile
+  var currentUserString = localStorage.getItem('userprofile');
+  var currentUser = JSON.parse(currentUserString);
+  currentUser.timesMethodShown[thisQuestionLocation]++;
+
 
 
   if (userAnswer === storedObject.answer) {
@@ -103,9 +111,13 @@ function checkAnswer() {
     thisDot.style.backgroundColor = 'blue';
     thisSubmit.style.display = 'none';
     userAnswerNode.style.display = 'none';
-    // var parent = userAnswerNode.parentNode;
     var newText = document.getElementById('article' + idEnd);
     newText.textContent = 'You correctly answered:  ' + userAnswer;
+    //more updates to user profile
+    currentUser.timesMethodCorrect[thisQuestionLocation]++;
+    console.log(currentUser);
+    localStorage.setItem('userprofile', JSON.stringify(currentUser));
+
   } else {
     console.log('incorrect');
     thisDot.style.backgroundColor = 'red';
