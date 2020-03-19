@@ -6,7 +6,7 @@ nameForm.addEventListener('submit', function (event) {
   var userNameProvided = document.getElementById('userName').value;
   localStorage.setItem('userName', JSON.stringify(userNameProvided));
   nameForm.textContent = 'Welcome to our site ' + userNameProvided;
-
+  newFooterText();
 });
 
 
