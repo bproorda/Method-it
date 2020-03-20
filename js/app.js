@@ -36,9 +36,9 @@ function SavedQuestions(questionLocation) {
   this. userAnswer ='',
   storedState.push(this);
 }
-console.log(storedState);
-//checking for stored questions
 
+//checking for stored questions
+//stored objects is still the WRONG objects
 if (localStorage.getItem('storedState')) {
   console.log('storedState is running');
   var storedObjectsString = localStorage.getItem('storedState');
@@ -52,29 +52,35 @@ if (localStorage.getItem('storedState')) {
     var kids = nodeLocation.childNodes;
     kids[1].textContent = allMethods[whereIsQuestion].name;
     kids[3].innerHTML = allMethods[whereIsQuestion].question;
+    displayedMethods[arrayIndex] = allMethods[whereIsQuestion];
 
-    //adding event listener to dots to revel nodes
-    var revealNode = document.getElementById('dot' + h);
-    revealNode.addEventListener('click', showMe, false);
-
-    //adding event listener to close buttons
-    var closeBtn = document.getElementById('close' + h);
-    closeBtn.addEventListener('click', closeDiv);
-
-    //adding event listener to buttons for answers
-    var nodeButton = document.getElementById('button' + h);
-    // console.log(nodeButton);
-    nodeButton.addEventListener('click', checkAnswer, false);
-
-    //saving which object is tied to which node in localstorage
-    localStorage.setItem(whichQuestion, JSON.stringify(displayedMethods[arrayIndex]));
-
+    saveAndListen(h,arrayIndex);
+    var newStoredquestion = new SavedQuestions(displayedMethods[arrayIndex].arrayLocation);
+    localStorage.setItem(whichQuestion, JSON.stringify(allMethods[whereIsQuestion]));
+    localStorage.setItem('storedState', JSON.stringify(storedState));
     //putting users answer back
   }
 } else {
   randomizer();
 }
 
+function saveAndListen(id, index) {
+  //adding event listener to dots to revel nodes
+  var revealNode = document.getElementById('dot' + id);
+  revealNode.addEventListener('click', showMe, false);
+
+  //adding event listener to close buttons
+  var closeBtn = document.getElementById('close' +id);
+  closeBtn.addEventListener('click', closeDiv);
+
+  //adding event listener to buttons for answers
+  var nodeButton = document.getElementById('button' + id);
+  // console.log(nodeButton);
+  nodeButton.addEventListener('click', checkAnswer, false);
+
+  //saving which object is tied to which node in localstorage
+  localStorage.setItem(whichQuestion, JSON.stringify(displayedMethods[index]));
+}
 //main rendering function
 function renderNodes(){
   for (var j = 1; j <= nodeNumber; j++) {
@@ -86,20 +92,7 @@ function renderNodes(){
     kids[1].textContent = displayedMethods[arrayIndex].name;
     kids[3].innerHTML = displayedMethods[arrayIndex].question;
 
-    //adding event listener to dots to revel nodes
-    var revealNode = document.getElementById('dot' + j);
-    revealNode.addEventListener('click', showMe, false);
-
-    //adding event listener to close buttons
-    var closeBtn = document.getElementById('close' + j);
-    closeBtn.addEventListener('click', closeDiv);
-
-    //adding event listener to buttons for answers
-    var nodeButton = document.getElementById('button' + j);
-    // console.log(nodeButton);
-    nodeButton.addEventListener('click', checkAnswer, false);
-
-    //saving which object is tied to which node in localstorage
+    saveAndListen(j, arrayIndex);
     localStorage.setItem(whichQuestion, JSON.stringify(displayedMethods[arrayIndex]));
     var newStoredquestion = new SavedQuestions(displayedMethods[arrayIndex].arrayLocation);
     localStorage.setItem('storedState', JSON.stringify(storedState));
@@ -121,7 +114,6 @@ function showMe() {
   var node = document.getElementById('div'+ idEnd);
   node.style.visibility = 'visible';
   //closes others nodes already open
-  console.log(node.id);
   for (var z = 1; z <= displayedMethods.length; z++) {
     var otherNodes = document.getElementById('div' + z);
     var condition = (node.id !== otherNodes.id && otherNodes.style.visibility === 'visible');
