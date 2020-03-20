@@ -78,9 +78,10 @@ h3 {
   font-size: 25px;
 }
 
-main > p {
-  font-size: 15px;
+p {
+  font-size: 25px;
   padding-bottom: 5px;
+  line-height: 30px;
 }
 
 h2 {
@@ -200,8 +201,8 @@ h2 {
   border-radius: 10px;
   box-shadow: 10px 10px 5px black;
   padding: 30px;
-  width: 500px;
-  height: 375px;
+  width: 550px;
+  height: 450px;
   background-image: url(../images/paper3.jpg);
 }
 
