@@ -122,10 +122,21 @@ h2 {
 
 #reset {
   position: absolute;
-  top: 254px;
-  left: 233px;
-  height: 100px;
-  width: 100px;
+  top: 260px;
+  left: 240px;
+  height: 90px;
+  width: 90px;
+}
+
+#reset:hover
+{
+  -webkit-transform: rotateZ(-80deg);
+  -ms-transform: rotateZ(-80deg);
+  transform: rotateZ(-80deg);
+  -webkit-transition-duration: 3s;
+  -moz-transition-duration: 3s;
+  -o-transition-duration: 3s;
+  transition-duration: 3s;
 }
 
 #dot1 {
