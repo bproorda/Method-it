@@ -78,9 +78,10 @@ h3 {
   font-size: 25px;
 }
 
-main > p {
-  font-size: 15px;
+p {
+  font-size: 25px;
   padding-bottom: 5px;
+  line-height: 30px;
 }
 
 h2 {
