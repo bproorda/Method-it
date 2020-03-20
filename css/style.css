@@ -107,8 +107,8 @@ h2 {
 }
 
 .dot {
-    height: 28px;
-    width: 28px;
+    height: 32px;
+    width: 32px;
     border-radius: 50%;
     display: inline-block;
   }
@@ -122,58 +122,69 @@ h2 {
 
 #reset {
   position: absolute;
-  top: 254px;
-  left: 233px;
-  height: 100px;
-  width: 100px;
+  top: 260px;
+  left: 240px;
+  height: 90px;
+  width: 90px;
+}
+
+#reset:hover
+{
+  -webkit-transform: rotateZ(-80deg);
+  -ms-transform: rotateZ(-80deg);
+  transform: rotateZ(-80deg);
+  -webkit-transition-duration: 3s;
+  -moz-transition-duration: 3s;
+  -o-transition-duration: 3s;
+  transition-duration: 3s;
 }
 
 #dot1 {
   position: absolute;
-  top: 102px;
-  left: 15px;
+  top: 101px;
+  left: 12px;
 }
 
 #dot2 {
   position: absolute;
   top: 109px;
-  left: 180px;
+  left: 178px;
 }
 
 #dot3 {
   position: absolute;
-  top: 60px;
-  left: 360px;
+  top: 59px;
+  left: 358px;
 }
 
 #dot4 {
   position: absolute;
-  top: 190px;
-  left: 455px;
+  top: 187px;
+  left: 454px;
 }
 
 #dot5 {
   position: absolute;
-  top: 395px;
-  left: 470px;
+  top: 392px;
+  left: 468px;
 }
 
 #dot6 {
   position: absolute;
-  top: 522px;
-  left: 365px;
+  top: 520px;
+  left: 361px;
 }
 
 #dot7 {
   position: absolute;
-  top: 454px;
-  left: 166px;
+  top: 452px;
+  left: 163px;
 }
 
 #dot8 {
   position: absolute;
-  top: 304px;
-  left: 20px;
+  top: 301px;
+  left: 19px;
 }
 
 #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8 {
@@ -190,7 +201,7 @@ h2 {
   box-shadow: 10px 10px 5px black;
   padding: 30px;
   width: 500px;
-  height: 350px;
+  height: 375px;
   background-image: url(../images/paper3.jpg);
 }
 
