@@ -58,7 +58,12 @@ if (localStorage.getItem('storedState')) {
     var newStoredquestion = new SavedQuestions(displayedMethods[arrayIndex].arrayLocation);
     localStorage.setItem(whichQuestion, JSON.stringify(allMethods[whereIsQuestion]));
     localStorage.setItem('storedState', JSON.stringify(storedState));
+
     //putting users answer back
+    if(storedObjects[arrayIndex].wasAnswered === true) {
+      var returnUserInput = document.getElementById('question' + h);
+      returnUserInput.value = storedObjects[arrayIndex].userAnswer;
+    }
   }
 } else {
   randomizer();
@@ -170,7 +175,7 @@ function checkAnswer() {
 }
 function getIdnumber(eventTarget) {
   var id = eventTarget.target.id;
-  var idEnd =id.charAt(id.length-1);
+  var idEnd = id.charAt(id.length-1);
   return idEnd;
 }
 var resetButton = document.getElementById('reset');
